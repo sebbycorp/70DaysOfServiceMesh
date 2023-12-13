@@ -50,6 +50,9 @@ Kubernetes has some challenges in how it can handle things like multi-cluster an
 There are PLENTY of service mesh offerings out there. Some are highly proprietary while others are very open. 
 We will cover some options for the next day, *Comparing Different Service Meshes*. Here's a start to get a sense of what Service Mesh solutions are out there.
 
+#### Solo Gloo Mesh
+Gloo Mesh simplifies service mesh adoption across various clouds and clusters, whether you're dealing with containers or virtual machines. Powered by Istio and Cilium, Gloo Mesh empowers platform engineering teams to boost security, resiliency, and observability.
+
 #### Istio 
 Istio is an open-source service mesh built by Google, IBM, and Lyft, and currently actively developed on and maintained by companies such as Solo.io. It is based on the Envoy proxy which is adopted for the sidecar pattern. Istio offers a high degree of customization and extensibility with advanced traffic routing, observability, and security for microservices. A new mode of operation for sidecar-less service mesh, called Ambient Mesh, was launched in 2022.
 
