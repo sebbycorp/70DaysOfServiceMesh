@@ -35,13 +35,13 @@ This is important because you will need enough resources to run the service mesh
     kubectl get nodes -o wide
     kubectl get pods -A
     ```
-2. Download Istio, which will pick up the latest version i.e 1.19.1
+2. Download Istio, which will pick up the latest version i.e 1.20.1
     ```
     curl -L https://istio.io/downloadIstio | sh -
     ```
 3. Change to the Istio directory
     ```
-    cd istio-1.19.1
+    cd istio-1.20.1
     ```
 4. Add the istioctl binary to your path
     ```
@@ -104,7 +104,7 @@ Let's label our default namespace with the *istio-injection=enabled* label. This
     ```
     kubectl get ns --show-labels
     ```
-9. Let's deploy our app. Make sure you are the in the same directory as before. If not, change to *istio-1.19.1*
+9. Let's deploy our app. Make sure you are the in the same directory as before. If not, change to *istio-1.20.1*
     ```
     kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
     ```
@@ -148,7 +148,7 @@ Let's label our default namespace with the *istio-injection=enabled* label. This
     The one thing to notice here is that all pods have *2/2* containers ready, meaning, the sidecar is now present.
 
 #### Testing functionality
-10. One test I'll run is to verify that I can connect to any one of these pods and get a response. Let's deploy a sleep pod. If you were in the same *istio-1.19.1* directory, then you can run this command.
+10. One test I'll run is to verify that I can connect to any one of these pods and get a response. Let's deploy a sleep pod. If you were in the same *istio-1.20.1* directory, then you can run this command.
     ```
     kubectl apply -f samples/sleep/sleep.yaml
     ```
@@ -209,14 +209,11 @@ Let's label our default namespace with the *istio-injection=enabled* label. This
     ```
     kubectl get svc -n istio-system
     ```
-    Store it in a variable
-    ```
-    export INGRESS_HOST=[IP_from_Istio_ingress_gateway]
-    export INGRESS_PORT=80
+ 
     ```
     now curl this host:
     ```
-    curl INGRESS_HOST:INGRESS_PORT/productpage
+    curl http://172.16.10.211/productpage
     ```
     And the RESULT:
     ```
